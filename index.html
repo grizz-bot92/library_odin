@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <title>Library</title>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <div class="header">
+                <img class="logo" src="images/books.png" alt="books" width="100px">
+                <h1>LitLounge</h1>
+                <p class="tagline">"A cozy place for literary lovers"</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="add-book">
+                <button id="show-form">
+                    <i class="fa-solid fa-plus"> Add Book</i>
+                </button>
+
+                <dialog data-modal class="modal">
+                    
+                    <form method="dialog" action="example.com" method="post">
+                        
+                        <label for="author">Author: </label>
+                        <input type="text" id="author" name="author" required>
+
+                        <label for="title">Title </label>
+                        <input type="text" id="title" name="title" required>
+
+                        <label for="pages">Pages: </label>
+                        <input type="number" id="pages" name="pages" min="1" required>
+                        
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="read" name="read">
+                            <label for="read">Read</label>
+                        </div>
+                        
+                        <button type="submit" id="submit">Submit</button>
+                    </form>    
+                </dialog>
+            </div>  
+        </section>
+
+        <section>
+            <div class="books">
+                <div class="book-row">
+                    <div class="book">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>

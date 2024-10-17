@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    font-family: 'lato', sans-serif;
+    background-color: #f5f3eb;
+    color: #4e342e;
+}
+
+.container{
+    display: grid;
+    gap: 25px;
+    grid-template-rows: auto auto 1fr;
+    height: 100vh;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 40px;
+    background-color: #a1887f;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0, 0, 0.1);
+}
+
+.logo{
+    grid-row: 1/span 2;
+    justify-self: center;
+}
+
+h1{
+    font-size: 3rem;
+    color:#fff;
+    text-align: center;
+}
+
+.tagline{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f5f3eb;
+    justify-self: center;
+    text-align: center;
+}
+
+.add-book{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.modal form #read{
+    flex-direction: row;
+}
+
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 50px;
+    gap: 20px;
+}
+dialog{
+    position: fixed;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0, 0, 0.5);
+}
+::backdrop {
+    background-color:rgba(128, 128, 128, 0.5) ;
+}
+
+
+button{
+    width: 250px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #6d4c41;
+    border-radius: 50px;
+    background-color:#8d6e63;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+button:hover {
+    background-color: #5d4037;
+}
+
+.books{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 550px;
+    border: 2px solid #d7ccc8;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.book-row{
+    padding: 15px;
+}
+
+.book{
+    position: relative;
+    width:200px;
+    height: auto;
+    margin: 25px;
+}
+
+.book-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black; 
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Cedarville Cursive", cursive;
+    pointer-events: none;
+    z-index: 1;
+}
+.delete-btn{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background:none;
+    border: 1px dashed ;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top: 0%;
+    left: 0%;
+    margin:-9%;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(197, 38, 38);
+    color: #fae0e0;
+}
+
+
+.delete-btn:hover{
+    box-shadow: 2px 2px 4px rgba(39, 134, 212, 0.5);
+}
+.delete-btn i{
+    margin: 2px;
+}
+
+
+@media (max-width:768px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+}
