@@ -5,8 +5,6 @@ const booksContainer = document.querySelector(".books");
 const images = ['images/green_book.png', 'images/red_book.png', 'images/book.png'];
 
 
-
-
 const myLibrary = [];
 
 function Book(title, author, pages, read){
@@ -42,28 +40,43 @@ function displayBooks() {
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-btn');
 
-        // const icon = document.createElement('i');
-        // icon.classList.add('fa-solid', 'fa-trash-can','fa-2x');
-    
-        
-        // deleteButton.appendChild(icon);
+        const icon = document.createElement('i');
+        icon.classList.add('fa-solid', 'fa-trash-can','fa-2x');
 
-        // deleteButton.addEventListener('click', () =>{
-        //     myLibrary.splice(index, 1);
-        //     displayBooks();
+        const tooltip = document.createElement('div');
+        tooltip.classList.add('tooltip');
+        tooltip.innerHTML = `
+            <strong>Title: </strong> ${book.title}<br>
+            <strong>Author: </strong> ${book.author}<br>
+            <strong>Pages: </strong> ${book.pages}<br>
+            <strong>Read: </strong> ${book.read}<br>
+            `;
+        
+            bookDiv.addEventListener('mouseover', () =>{
+                tooltip.style.visibility = 'visible';
+            });
+
+            bookDiv.addEventListener('mouseout', () =>{
+                tooltip.style.visibility = 'hidden';
+            });
+        
+        deleteButton.appendChild(icon);
+
+        deleteButton.addEventListener('click', (index) =>{
+            myLibrary.splice(index, 1);
+            displayBooks();
             
-        // });
+        });
 
 
         bookDiv.appendChild(bookImage);
         bookDiv.appendChild(titleOverlay);
+        bookDiv.appendChild(tooltip);
         bookDiv.appendChild(deleteButton);
 
         booksContainer.appendChild(bookDiv);
     });
 };  
-
-
 
 
 addBookButton.addEventListener("click", () =>{
@@ -85,6 +98,8 @@ submitBook.addEventListener("click", (e) => {
     e.target.form.reset();
 });
 
-console.log(addBookButton);
+
+
+
 
 
